@@ -1,11 +1,11 @@
 module.exports = {
   "development": {
-    "username": "devuser",
-    "password": "Test1234%",
+    "username": "thi",
+    "password": "Matkhau10%",
     "database": "graphbook_dev",
-    "host": "192.168.2.107",
+    "host": "localhost",
     "dialect": "mysql",
-    "operatorsAliases": false,
+    "operatorsAliases": 0,
     "pool": {
       "max": 5,
       "min": 0,
@@ -20,7 +20,7 @@ module.exports = {
     "database": process.env.database,
     "logging": false,
     "dialect": "mysql",
-    "operatorsAliases": false,
+    "operatorsAliases": 0,
     "pool": {
         "max": 5,
         "min": 0,

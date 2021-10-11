@@ -11,5 +11,4 @@ const db = {
     models: models(sequelize),
     sequelize,
 };
-
 export default db;

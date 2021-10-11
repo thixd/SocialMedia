@@ -3,8 +3,16 @@ import path from 'path';
 import helmet from 'helmet';
 import cors from 'cors';
 import compress from 'compression';
-import services from './services';
+//import services from './services';
 import server from './services/graphql';
+import servicesLoader from './services';
+import db from './database'
+import { util } from 'webpack';
+
+const utils = {
+  db,
+};
+const services = servicesLoader(utils);
 
 const root = path.join(__dirname, '../../');
 const app = express();
@@ -26,14 +34,15 @@ app.use(helmet.referrerPolicy({ policy: 'same-origin' }));
 app.use('/', express.static(path.join(root, 'dist/client')));
 app.use('/uploads', express.static(path.join(root, 'uploads')));
 const serviceNames = Object.keys(services);
-for (let i = 0; i < serviceNames.length; i += 1) {
+
+for (let i = 0; i < serviceNames.length; i++) {
   const name = serviceNames[i];
   if (name === 'graphql') {
     async function startAppoloServer(server){
       await server.start();
       services[name].applyMiddleware({ app });
     }
-    startAppoloServer(server)
+    startAppoloServer(server(util))
   } else {
     app.use(`/${name}`, services[name]);
   }
