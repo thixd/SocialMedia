@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
-    "username": "thi",
-    "password": "Matkhau10%",
+    "username": "phpmyadmin",
+    "password": "Test123%",
     "database": "graphbook_dev",
     "host": "localhost",
     "dialect": "mysql",

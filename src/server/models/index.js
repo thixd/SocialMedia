@@ -1,10 +1,5 @@
 import Sequelize from 'sequelize';
-import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
-registerRequireContextHook();
-
-if (process.env.NODE_ENV === 'development') {
-  require('babel-plugin-require-context-hook/register')()
-}
+require('babel-plugin-require-context-hook/register')()
 
 export default (sequelize) => {
   let db = {};

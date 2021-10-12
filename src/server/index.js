@@ -7,7 +7,7 @@ import compress from 'compression';
 import server from './services/graphql';
 import servicesLoader from './services';
 import db from './database'
-import { util } from 'webpack';
+//import { util } from 'webpack';
 
 const utils = {
   db,
@@ -38,11 +38,11 @@ const serviceNames = Object.keys(services);
 for (let i = 0; i < serviceNames.length; i++) {
   const name = serviceNames[i];
   if (name === 'graphql') {
-    async function startAppoloServer(server){
-      await server.start();
-      services[name].applyMiddleware({ app });
+    async function startApolloServer(myserver){
+      await myserver.start();
+      myserver.applyMiddleware({ app });
     }
-    startAppoloServer(server(util))
+    startApolloServer(services[name]);
   } else {
     app.use(`/${name}`, services[name]);
   }

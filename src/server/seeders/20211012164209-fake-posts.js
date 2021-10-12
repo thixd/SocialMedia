@@ -7,7 +7,7 @@ module.exports = {
       'SELECT id from Users;',
     ).then((users) => {
       const usersRows = users[0];
-      
+      console.log(usersRows)
       return queryInterface.bulkInsert('Posts', [{
         text: 'Lorem ipsum 1',
         userId: usersRows[0].id,
@@ -26,4 +26,4 @@ module.exports = {
   down: (queryInterface, Sequelize) => {
     return queryInterface.bulkDelete('Posts', null, {});
   }
-}
+};
