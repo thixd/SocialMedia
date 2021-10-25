@@ -20,7 +20,6 @@ Database structure looks like below:
 Demo
 ====
 ![Alt text](/screenshots/main.png "Main feed") <br/>
-<p align="center"> Main feed </p>
 Main feed is where user can upload the post and also seeing other people post too <br/>
 ![Alt text](/screenshots/edit.png "Editing and Deleting") <br/>
 Posts can be edited and deleted as user wanted
