@@ -1,4 +1,4 @@
-Graphbook - Social Media
+Social Media
 ========
 Full-stack web-based application providing social media for user to share contents and also able to search for another users. Technology used: HTML, CSS, ReactJS, GraphQL, Webpack, MySQL, Apollo.
 
