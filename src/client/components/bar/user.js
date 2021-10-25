@@ -5,9 +5,13 @@ export default class UserBar extends Component {
         const { user } = this.props;
         if(!user) return null;
         return (
+            // <div className="user">
+            //     <img src={user.avatar} />
+            //     <span>{user.username}</span>
+            // </div>
             <div className="user">
-                <img src={user.avatar} />
-                <span>{user.username}</span>
+                <img src="https://cdn-icons-png.flaticon.com/512/163/163811.png"/>
+                <span>Katie</span>
             </div>
         );
     }

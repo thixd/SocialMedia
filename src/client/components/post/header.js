@@ -7,7 +7,7 @@ const DeleteButton = ({deletePost, postId}) =>
     <button onClick={() => {
         deletePost({ variables: { postId } })
     }}>
-        Delete
+        Delete Post
     </button>
 
 export default ({post, changeState}) => 
@@ -16,11 +16,9 @@ export default ({post, changeState}) =>
         <div>
             <h2>{post.user.username}</h2>
         </div>
-        {/* <Dropdown trigger={<FontAwesomeIcon icon="angle-down" />}> */}
-        <button onClick={changeState}>Edit</button>
-        <DeletePostMutation post={post}>
-            <DeleteButton />
-        </DeletePostMutation>
-        {/* </Dropdown> */}
+            <button onClick={changeState}>Edit Post</button>
+            <DeletePostMutation post={post}>
+                <DeleteButton />
+            </DeletePostMutation>
         
     </div>
